@@ -1,0 +1,21 @@
+@use "../../style/color" as c;
+
+.Button {
+  background: c.$white;
+  border: 1px solid c.$gray-light;
+  border-radius: 5px;
+  font-size: 12px;
+  color: c.$black;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+  outline: 0;
+
+  &:hover {
+    box-shadow: 0 0 5px c.$gray;
+  }
+
+  &:active {
+    background: c.$gray-light;
+  }
+}
