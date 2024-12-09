@@ -10,7 +10,7 @@ export const newsApi = createApi({
       query: () => ({
         url: "",
         params: {
-          country: "us",
+          language: "en",
           apikey: NEWS_API_KEY,
         },
       }),

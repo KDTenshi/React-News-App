@@ -7,9 +7,10 @@
   background: #dee2e6;
 }
 .Image img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
   font-size: 12px;
 }
 .Image img[src=""] {

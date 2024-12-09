@@ -9,8 +9,9 @@
   background: c.$gray-light;
 
   & img {
-    width: 100%;
-    object-fit: contain;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
     font-size: 12px;
 
     &[src=""] {
