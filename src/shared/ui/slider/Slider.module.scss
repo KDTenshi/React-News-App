@@ -1,0 +1,28 @@
+@use "../../style/color" as c;
+
+@mixin Button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.Slider {
+  background: c.$white;
+  position: relative;
+  align-items: center;
+}
+
+.Button {
+  &_Left {
+    @include Button();
+    left: 10px;
+  }
+
+  &_Right {
+    @include Button();
+    right: 10px;
+  }
+}
