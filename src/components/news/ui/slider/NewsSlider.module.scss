@@ -1,0 +1,33 @@
+@use "../../../../shared/style/color" as c;
+
+@mixin Button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.NewsSlider {
+  background: c.$white;
+  position: relative;
+}
+
+.Slide {
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button {
+  &_Left {
+    @include Button();
+    left: 10px;
+  }
+
+  &_Right {
+    @include Button();
+    right: 10px;
+  }
+}

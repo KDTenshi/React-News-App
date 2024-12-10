@@ -1,0 +1,29 @@
+.NewsSlider {
+  background: #f8f9fa;
+  position: relative;
+}
+
+.Slide {
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button_Left {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+  font-size: 20px;
+  padding: 5px;
+  left: 10px;
+}
+.Button_Right {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+  font-size: 20px;
+  padding: 5px;
+  right: 10px;
+}/*# sourceMappingURL=NewsSlider.module.css.map */
