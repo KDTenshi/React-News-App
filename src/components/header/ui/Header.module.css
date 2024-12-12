@@ -1,0 +1,24 @@
+.Header {
+  width: 100%;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.Date {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6c757d;
+}/*# sourceMappingURL=Header.module.css.map */
