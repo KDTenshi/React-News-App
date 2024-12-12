@@ -1,0 +1,26 @@
+@use "../../../shared/style/colors" as c;
+
+.Header {
+  width: 100%;
+  padding: 15px 20px;
+  background: c.$white;
+  border-bottom: 1px solid c.$gray-light;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 700;
+  color: c.$black;
+}
+
+.Date {
+  font-size: 12px;
+  font-weight: 400;
+  color: c.$gray-dark;
+}
