@@ -14,7 +14,16 @@ export const newsApi = createApi({
         },
       }),
     }),
+    getFilteredNews: builder.query<NewsAPIResponse, void>({
+      query: () => ({
+        url: "search",
+        params: {
+          apiKey: NEWS_API_KEY,
+          page_size: 5,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetLatestNewsQuery } = newsApi;
+export const { useGetLatestNewsQuery, useGetFilteredNewsQuery } = newsApi;
