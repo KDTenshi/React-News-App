@@ -1,0 +1,26 @@
+@use "../../style/colors" as c;
+
+.Wrapper {
+  background: c.$white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.Slide {
+  padding: 5px 10px;
+}
+
+.Button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+
+  &_Prev {
+    left: 15px;
+  }
+
+  &_Next {
+    right: 15px;
+  }
+}

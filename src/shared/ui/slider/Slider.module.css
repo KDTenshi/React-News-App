@@ -1,0 +1,22 @@
+.Wrapper {
+  background: #f8f9fa;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.Slide {
+  padding: 5px 10px;
+}
+
+.Button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 100;
+}
+.Button_Prev {
+  left: 15px;
+}
+.Button_Next {
+  right: 15px;
+}/*# sourceMappingURL=Slider.module.css.map */
