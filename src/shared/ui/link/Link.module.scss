@@ -1,0 +1,27 @@
+@use "../../style/colors" as c;
+
+.Link {
+  display: inline-block;
+  background: c.$white;
+  padding: 5px 10px;
+  font-size: 10px;
+  color: c.$gray-dark;
+  text-decoration: none;
+  border: 1px solid c.$gray-light;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    box-shadow: 0 0 5px c.$gray;
+  }
+
+  &:active {
+    background: c.$gray-light;
+  }
+
+  &_Active {
+    border-color: c.$black;
+    color: c.$black;
+  }
+}

@@ -1,0 +1,22 @@
+.Link {
+  display: inline-block;
+  background: #f8f9fa;
+  padding: 5px 10px;
+  font-size: 10px;
+  color: #6c757d;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+}
+.Link:hover {
+  box-shadow: 0 0 5px #adb5bd;
+}
+.Link:active {
+  background: #dee2e6;
+}
+.Link_Active {
+  border-color: #212529;
+  color: #212529;
+}/*# sourceMappingURL=Link.module.css.map */

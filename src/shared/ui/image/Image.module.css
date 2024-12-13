@@ -1,0 +1,16 @@
+.Image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dee2e6;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+.Image img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=Image.module.css.map */
