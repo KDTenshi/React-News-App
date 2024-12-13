@@ -1,0 +1,18 @@
+@use "../../style/colors" as c;
+
+.Image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: c.$gray-light;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid c.$gray-light;
+
+  & img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
