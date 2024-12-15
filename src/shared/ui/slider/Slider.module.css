@@ -7,6 +7,10 @@
 .Slide {
   padding: 5px 10px;
 }
+.Slide_Auto {
+  width: -moz-min-content !important;
+  width: min-content !important;
+}
 
 .Button {
   position: absolute;

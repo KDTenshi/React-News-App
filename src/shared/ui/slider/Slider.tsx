@@ -7,9 +7,16 @@ import { Navigation } from "swiper/modules";
 
 interface SliderProps {
   loop?: boolean;
+  className?: string;
+  slidesPerView?: number | "auto";
 }
 
-const Slider: FC<PropsWithChildren<SliderProps>> = ({ children, loop = false }) => {
+const Slider: FC<PropsWithChildren<SliderProps>> = ({
+  children,
+  loop = false,
+  slidesPerView = "auto",
+  className = "",
+}) => {
   const isChildrenArray = Array.isArray(children);
   const unique = Date.now();
 
@@ -17,30 +24,33 @@ const Slider: FC<PropsWithChildren<SliderProps>> = ({ children, loop = false }) 
   const nextButtonClassName = [style.Button, style.Button_Next, `next${unique}`].join(" ");
 
   const sliderContent = isChildrenArray ? (
-    [...children].map((item) => (
-      <SwiperSlide key={item.key} className={style.Slide}>
-        {item}
-      </SwiperSlide>
-    ))
+    <Swiper
+      className={style.Slider}
+      modules={[Navigation]}
+      slidesPerView={slidesPerView}
+      loop={loop}
+      navigation={{
+        prevEl: `.prev${unique}`,
+        nextEl: `.next${unique}`,
+      }}
+    >
+      {[...children].map((item) => (
+        <SwiperSlide
+          key={item.key}
+          className={[style.Slide, slidesPerView === "auto" ? style.Slide_Auto : ""].join(" ")}
+        >
+          {item}
+        </SwiperSlide>
+      ))}
+    </Swiper>
   ) : (
-    <SwiperSlide>{children}</SwiperSlide>
+    <>{children}</>
   );
 
   return (
-    <div className={style.Wrapper}>
+    <div className={[style.Wrapper, className].join(" ")}>
       <Button className={prevButtonClassName}>{"<"}</Button>
-      <Swiper
-        className={style.Slider}
-        modules={[Navigation]}
-        slidesPerView={"auto"}
-        loop={loop}
-        navigation={{
-          prevEl: `.prev${unique}`,
-          nextEl: `.next${unique}`,
-        }}
-      >
-        {sliderContent}
-      </Swiper>
+      {sliderContent}
       <Button className={nextButtonClassName}>{">"}</Button>
     </div>
   );
