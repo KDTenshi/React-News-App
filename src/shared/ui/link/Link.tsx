@@ -1,5 +1,6 @@
 import { AnchorHTMLAttributes, FC } from "react";
 import style from "./Link.module.css";
+import { Link as RouterLink } from "react-router-dom";
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   active?: boolean;
@@ -11,9 +12,9 @@ const Link: FC<LinkProps> = ({ active = false, children, className = "", href = 
   const target = blank ? "_blank" : "";
 
   return (
-    <a href={href} className={fullClassName} {...restProps} target={target}>
+    <RouterLink to={href} className={fullClassName} {...restProps} target={target}>
       {children}
-    </a>
+    </RouterLink>
   );
 };
 

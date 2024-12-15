@@ -1,0 +1,7 @@
+.NewsCategories {
+  padding: 10px 40px;
+}
+
+.Category::first-letter {
+  text-transform: uppercase;
+}/*# sourceMappingURL=NewsCategories.module.css.map */
