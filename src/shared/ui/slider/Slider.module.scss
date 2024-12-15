@@ -8,6 +8,10 @@
 
 .Slide {
   padding: 5px 10px;
+
+  &_Auto {
+    width: min-content !important;
+  }
 }
 
 .Button {

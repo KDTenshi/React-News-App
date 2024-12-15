@@ -9,6 +9,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: box-shadow 0.25s;
+  white-space: nowrap;
 }
 .Link:hover {
   box-shadow: 0 0 5px #adb5bd;
