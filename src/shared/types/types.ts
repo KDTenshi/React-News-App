@@ -13,3 +13,9 @@ export type NewsAPIResponse = {
   status: "ok" | "error";
   page: number;
 };
+
+export type NewsAPICategoriesResponse = {
+  categories: string[];
+  status: "ok" | "error";
+  description: string;
+};
