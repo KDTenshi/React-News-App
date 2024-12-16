@@ -23,8 +23,10 @@ export type NewsAPICategoriesResponse = {
 export type FiltersType = {
   category: string | null;
   keywords: string | null;
+  page_number: number;
 };
 
 export interface APIParams extends Partial<FiltersType> {
   apiKey: string;
+  page_size: 10;
 }

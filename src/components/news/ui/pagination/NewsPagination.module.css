@@ -1,0 +1,15 @@
+.NewsPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 10px 0;
+}
+
+.Pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}/*# sourceMappingURL=NewsPagination.module.css.map */
