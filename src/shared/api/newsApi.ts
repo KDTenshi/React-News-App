@@ -15,14 +15,24 @@ export const newsApi = createApi({
       }),
     }),
     getFilteredNews: builder.query<NewsAPIResponse, string | null>({
-      query: (query) => ({
-        url: "search",
-        params: {
-          apiKey: NEWS_API_KEY,
-          page_size: 5,
-          category: query,
-        },
-      }),
+      query: (query) => {
+        if (query) {
+          return {
+            url: "search",
+            params: {
+              apiKey: NEWS_API_KEY,
+              keywords: query,
+            },
+          };
+        }
+
+        return {
+          url: "search",
+          params: {
+            apiKey: NEWS_API_KEY,
+          },
+        };
+      },
     }),
     getCategories: builder.query<NewsAPICategoriesResponse, void>({
       query: () => ({
