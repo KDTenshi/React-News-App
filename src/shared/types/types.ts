@@ -19,3 +19,12 @@ export type NewsAPICategoriesResponse = {
   status: "ok" | "error";
   description: string;
 };
+
+export type FiltersType = {
+  category: string | null;
+  keywords: string | null;
+};
+
+export interface APIParams extends Partial<FiltersType> {
+  apiKey: string;
+}
