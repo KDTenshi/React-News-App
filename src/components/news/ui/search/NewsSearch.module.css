@@ -1,0 +1,22 @@
+.NewsSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #f8f9fa;
+}
+
+.SearchBar {
+  background: #f8f9fa;
+  padding: 10px 15px;
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  width: 80vw;
+  outline: 0;
+  color: #6c757d;
+}
+.SearchBar:focus {
+  border-color: #212529;
+  color: #212529;
+}/*# sourceMappingURL=NewsSearch.module.css.map */
