@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { NEWS_API_BASE_URL, NEWS_API_KEY } from "./apiInfo";
-import { NewsAPICategoriesResponse, NewsAPIResponse } from "../types/types";
+import { APIParams, FiltersType, NewsAPICategoriesResponse, NewsAPIResponse } from "../types/types";
 
 export const newsApi = createApi({
   reducerPath: "newsApi",
@@ -14,23 +14,20 @@ export const newsApi = createApi({
         },
       }),
     }),
-    getFilteredNews: builder.query<NewsAPIResponse, string | null>({
+    getFilteredNews: builder.query<NewsAPIResponse, FiltersType>({
       query: (query) => {
-        if (query) {
-          return {
-            url: "search",
-            params: {
-              apiKey: NEWS_API_KEY,
-              keywords: query,
-            },
-          };
-        }
+        const { category, keywords } = query;
+
+        const params: APIParams = {
+          apiKey: NEWS_API_KEY,
+        };
+
+        if (category) params.category = category;
+        if (keywords) params.keywords = keywords;
 
         return {
           url: "search",
-          params: {
-            apiKey: NEWS_API_KEY,
-          },
+          params,
         };
       },
     }),

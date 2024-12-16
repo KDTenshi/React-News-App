@@ -2,13 +2,11 @@ import { FC } from "react";
 import { useGetFilteredNewsQuery } from "../../../../shared/api/newsApi";
 import NewsCard from "../card/NewsCard";
 import style from "./NewsList.module.css";
-import { useSearchParams } from "react-router-dom";
+import { useAppSelector } from "../../../../app/store/appStore";
 
 const NewsList: FC = () => {
-  const [searchParams] = useSearchParams();
-  const category = searchParams.get("category");
-
-  const { data } = useGetFilteredNewsQuery(category);
+  const filters = useAppSelector((state) => state.filters);
+  const { data } = useGetFilteredNewsQuery(filters);
 
   return (
     <div className={style.NewsList}>

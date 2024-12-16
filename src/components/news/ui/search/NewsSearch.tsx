@@ -1,24 +1,20 @@
 import { FC, useEffect, useState } from "react";
 import style from "./NewsSearch.module.css";
 import { useDebounce } from "../../utils/useDebounce";
-import { useSearchParams } from "react-router-dom";
+import { useAppDispatch } from "../../../../app/store/appStore";
+import { changeKeywords } from "../../model/filtersSlice";
 
 const NewsSearch: FC = () => {
   const [search, setSearch] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const debounceKeywords = useDebounce(search, 500);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (debounceKeywords) {
-      setSearchParams((prev) => ({ ...prev, keywords: debounceKeywords }));
-    } else {
-      setSearchParams((prev) => ({ ...prev }));
-    }
+    dispatch(changeKeywords(debounceKeywords));
   }, [debounceKeywords]);
 
   return (
-    <form className={style.NewsSearch}>
+    <form className={style.NewsSearch} onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
         placeholder="Search..."
