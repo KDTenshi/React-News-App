@@ -1,0 +1,17 @@
+@use "../../../../shared/style/colors" as c;
+
+.NewsPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: c.$white;
+  padding: 10px 0;
+}
+
+.Pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

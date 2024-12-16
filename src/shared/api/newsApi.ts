@@ -16,10 +16,12 @@ export const newsApi = createApi({
     }),
     getFilteredNews: builder.query<NewsAPIResponse, FiltersType>({
       query: (query) => {
-        const { category, keywords } = query;
+        const { category, keywords, page_number } = query;
 
         const params: APIParams = {
           apiKey: NEWS_API_KEY,
+          page_size: 10,
+          page_number,
         };
 
         if (category) params.category = category;
