@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "../style/App.css";
 import { Header } from "../../components/header";
-import { NewsSlider } from "../../components/news";
+import { NewsListFiltered, NewsSlider } from "../../components/news";
 import { BrowserRouter } from "react-router-dom";
 
 const App: FC = () => {
@@ -9,6 +9,7 @@ const App: FC = () => {
     <BrowserRouter>
       <Header />
       <NewsSlider />
+      <NewsListFiltered />
     </BrowserRouter>
   );
 };

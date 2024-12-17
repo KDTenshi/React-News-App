@@ -8,6 +8,20 @@
   padding: 15px;
 }
 
+.Skeleton {
+  width: 100%;
+  background-image: linear-gradient(60deg, #dee2e6, #dee2e6, #f8f9fa, #dee2e6, #dee2e6);
+  background-size: 200% 200%;
+  border-radius: 15px;
+  animation: load 2s ease infinite;
+}
+.Skeleton_Big {
+  height: 250px;
+}
+.Skeleton_Small {
+  height: 100px;
+}
+
 .Image_Big {
   width: 30vw !important;
   height: 30vw !important;
@@ -37,4 +51,16 @@
 .Description {
   font-size: 12px;
   color: #adb5bd;
+}
+
+@keyframes load {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
 }/*# sourceMappingURL=NewsCard.module.css.map */
