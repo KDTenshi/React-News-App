@@ -4,4 +4,25 @@
 
 .Category::first-letter {
   text-transform: uppercase;
+}
+
+.Skeleton {
+  width: 70px;
+  height: 25px;
+  background-image: linear-gradient(60deg, #dee2e6, #dee2e6, #f8f9fa, #dee2e6, #dee2e6);
+  background-size: 200% 200%;
+  border-radius: 5px;
+  animation: load 2s ease infinite;
+}
+
+@keyframes load {
+  0% {
+    background-position: 10% 0;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 10% 0;
+  }
 }/*# sourceMappingURL=NewsCategories.module.css.map */

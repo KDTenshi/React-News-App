@@ -4,11 +4,14 @@ import { useGetCategoriesQuery } from "../../../../shared/api/newsApi";
 import style from "./NewsCategories.module.css";
 import { useAppDispatch, useAppSelector } from "../../../../app/store/appStore";
 import { changeCategory } from "../../model/filtersSlice";
+import NewsCategorySkeleton from "./NewsCategorySkeleton";
 
 const NewsCategories: FC = () => {
-  const { data } = useGetCategoriesQuery();
+  const { data, isLoading } = useGetCategoriesQuery();
   const dispatch = useAppDispatch();
   const selectedCategory = useAppSelector((state) => state.filters.category);
+
+  const allCategories = data ? ["All", ...data.categories] : [...new Array(10)];
 
   const handleCategory = (category: string) => {
     dispatch(changeCategory(category));
@@ -16,17 +19,19 @@ const NewsCategories: FC = () => {
 
   return (
     <Slider loop className={style.NewsCategories}>
-      {data &&
-        ["All", ...data.categories].map((category) => (
-          <Button
-            key={category}
-            className={style.Category}
-            active={!selectedCategory ? category === "All" : category === selectedCategory}
-            onClick={() => handleCategory(category)}
-          >
-            {category}
-          </Button>
-        ))}
+      {isLoading
+        ? allCategories.map((_, index) => <NewsCategorySkeleton key={index} />)
+        : data &&
+          allCategories.map((category) => (
+            <Button
+              key={category}
+              className={style.Category}
+              active={!selectedCategory ? category === "All" : category === selectedCategory}
+              onClick={() => handleCategory(category)}
+            >
+              {category}
+            </Button>
+          ))}
     </Slider>
   );
 };
